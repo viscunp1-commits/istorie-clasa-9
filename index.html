@@ -10,9 +10,16 @@
 
 <body>
 
+<div class="mobile-header">
+    <button id="btnMenuToggle" class="btn-menu-toggle" aria-label="Deschide meniul">
+        ☰ Teme
+    </button>
+    <div class="mobile-title" onclick="afiseazaWelcome()">Istorie clasa a IX-a</div>
+</div>
+
 <div class="container">
 
-    <aside>
+    <aside id="asideMenu">
         <div class="menu-header" onclick="afiseazaWelcome()">Istorie clasa a IX-a</div>
         <div id="listaTeme"></div>
     </aside>

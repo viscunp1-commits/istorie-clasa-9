@@ -1,10 +1,23 @@
 const listaTeme = document.getElementById("listaTeme");
 const continutLectie = document.getElementById("continutLectie");
+const asideMenu = document.getElementById("asideMenu");
+const btnMenuToggle = document.getElementById("btnMenuToggle");
 
 const cheiLectii = Object.keys(lectii);
 let lectieCurenta = -1; // -1 pentru pagina de bun venit (Home)
 
-// Toate noțiunile și personalitățile extrase exact din fișier, propoziție cu propoziție
+if(btnMenuToggle) {
+    btnMenuToggle.onclick = () => {
+        asideMenu.classList.toggle("deschis");
+    };
+}
+
+function inchideMeniuMobil() {
+    if(asideMenu) {
+        asideMenu.classList.remove("deschis");
+    }
+}
+
 const glosarExamen = {
     notiumni: {
         "Autonomie": "dreptul unui stat, unei minorități sau naționalități de a se administra singură, fără intervenția puterii centrale.",
@@ -44,7 +57,7 @@ const glosarExamen = {
         "Ion Inculeţ (1884-1940)": "- om politic, fizician, membru titular al Academiei Române. Primul președinte al Sfatului Țării (21 noiembrie 1917-2 aprilie 1918), militant al eliberării naționale și unirii cu România. După unire, a deținut funcții importante: ministru al Basarabiei, ministru al sănătății publice, ministru de interne, ministru al comunicațiilor și vicepreședinte al Consiliului de Miniștri al României.",
         "Nicolae Titulescu (1882-1941)": "- diplomat, jurist și om politic român, una dintre cele mai importante personalități ale diplomației europene din perioada interbelică. A fost ministru de externe al României și de două ori președinte al Societății Națiunilor, unde a susținut pacea, securitatea colectivă și cooperarea între state. A promovat activ politica de alianțe, contribuind la consolidarea poziției internaționale a României. A murit în 1941, în exil, Franța.",
         "Alexandru Plămădeală (1888-1940)": "- sculptor basarabean, director al Școlii Comunale de Desen din Chișinău (azi Colegiul Republican de Arte Plastice ce-i poartă numele), profesor de sculptură, desen și modelaj. Capodopera sa este monumentul lui Ștefan cel Mare și Sfânt (1928, Grădina Publică din Chișinău). A mai realizat portrete ale poetului Ion Minulescu, cântăreței Lidia Lipkovski, pictorului Teodorescu-Sion, lui Alexandru Donici și monumentul regelui Ferdinand I.",
-        "Constantin Brâncuși (1876-1957)": "- remarcabil sculptor român, autor a numeroase lucrări: Portretul pictorului Dărăscu, Orgoliu, Supliciu, Rugăciunea, Sărutul, Adam și Eva. În 1918 a sculptat în lemn primele coloane, care au căpătat forma definitivă în 1938: Coloana fără sfârșit / Coloana infinitului, parte a ansamblului de la Târgu Jiu, realizat în memoria soldaților căzuți în Primul Război Mondial.",
+        "Constantin Brâncuși (1876-1957)": "- remarkabil sculptor român, autor a numeroase lucrări: Portretul pictorului Dărăscu, Orgoliu, Supliciu, Rugăciunea, Sărutul, Adam și Eva. În 1918 a sculptat în lemn primele coloane, care au căpătat forma definitivă în 1938: Coloana fără sfârșit / Coloana infinitului, parte a ansamblului de la Târgu Jiu, realizat în memoria soldaților căzuți în Primul Război Mondial.",
         "Maria Cebotari (1910-1949)": "- soprană de renume mondial și actriță de film. A debutat la 15 aprilie 1931 pe scena Operei din Dresda, în rolul Mimi din „Boema” de Puccini. Solistă a Operei din Berlin (1935-1946) și a Operei din Viena (1947-1949); a susținut turnee în Marea Britanie, Franța, Italia, Suedia, Danemarca etc. A interpretat circa 60 de roluri de operă, a cântat operetă și a jucat în filme precum „Fata în Alb” (1934), „Inimi tari” și „Cântec de leagăn” (1937).",
         "Franklin D. Roosevelt": "- al 32-lea președinte al SUA (1933-1945), în funcție 4 mandate consecutive. Inițial adept al neutralității, dar evenimentele din anii '30 și ascensiunea URSS l-au convins să redefinească politica externă pe linia trasată de Wilson. A lansat programul „New Deal”. În al Doilea Război Mondial a participat la Conferințele de la Teheran și Yalta.",
         "Woodrow Wilson": "- președinte al SUA (1913-1921), istoric și politolog. Inițial adept al neutralității SUA în Primul Război Mondial, dar scufundarea vaselor civile americane de submarinele germane l-a determinat să susțină implicarea activă (din martie 1917). A proclamat „Cele 14 puncte” și a devenit vestitorul unei diplomații noi și deschise, a stat la baza fondării Societății Națiunilor. Laureat al Premiului Nobel pentru Pace (1919).",
@@ -63,7 +76,6 @@ const glosarExamen = {
     }
 };
 
-// Afișează temele în meniul din stânga
 function afiseazaTeme(){
     listaTeme.innerHTML = "";
 
@@ -78,12 +90,12 @@ function afiseazaTeme(){
             lectieCurenta = index;
             afiseazaTeme();
             deschideLectia(id);
+            inchideMeniuMobil();
         };
 
         listaTeme.appendChild(buton);
     });
 
-    // Buton în meniu pentru Noțiuni și Personalități
     if(!document.getElementById("btnGlosar")) {
         const btnGlosar = document.createElement("button");
         btnGlosar.id = "btnGlosar";
@@ -98,12 +110,12 @@ function afiseazaTeme(){
             lectieCurenta = -99;
             afiseazaTeme();
             afiseazaGlosar();
+            inchideMeniuMobil();
         };
         listaTeme.appendChild(btnGlosar);
     }
 }
 
-// Generare HTML test (titlu "Test", fără emoji)
 function genereazaHTMLTest(id) {
     const lectie = lectii[id];
     const test = lectie ? lectie.intrebari : null;
@@ -140,7 +152,6 @@ function genereazaHTMLTest(id) {
     return html;
 }
 
-// Deschide lecția selectată
 function deschideLectia(id){
     const lectie = lectii[id];
 
@@ -159,7 +170,6 @@ function deschideLectia(id){
         </div>
     `;
 
-    // Atașează evenimentele pentru verificare
     const test = lectie.intrebari;
     if(test) {
         document.querySelectorAll(".intrebare").forEach((intrebareDiv, index) => {
@@ -175,7 +185,6 @@ function deschideLectia(id){
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Pagina specială pentru Noțiuni și Personalități (titlurile centrate, textele aliniate la stânga)
 function afiseazaGlosar() {
     let htmlNotiuni = "";
     for (let [k, v] of Object.entries(glosarExamen.notiumni)) {
@@ -208,7 +217,6 @@ function afiseazaGlosar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Marchează răspunsul: Bifa (✓) sau X (✕) în cerculeț în stânga
 function marcheazaIntrebare(q, intrebareDiv, inputSelectat){
     const toateInputurile = intrebareDiv.querySelectorAll('input[type="radio"]');
 
@@ -228,7 +236,6 @@ function marcheazaIntrebare(q, intrebareDiv, inputSelectat){
     });
 }
 
-// Trecere la tema următoare
 function temaUrmatoare(){
     lectieCurenta++;
     if(lectieCurenta >= cheiLectii.length){
@@ -238,10 +245,10 @@ function temaUrmatoare(){
     deschideLectia(cheiLectii[lectieCurenta]);
 }
 
-// Ecranul de pornire (Home) actualizat
 function afiseazaWelcome() {
     lectieCurenta = -1;
     afiseazaTeme();
+    inchideMeniuMobil();
     continutLectie.innerHTML = `
         <div class="hero-welcome">
             <div class="hero-welcome-card">
@@ -274,7 +281,7 @@ function afiseazaWelcome() {
             </div>
         </div>
     `;
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Inițializare
 afiseazaWelcome();

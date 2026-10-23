@@ -11,6 +11,43 @@ body{
     min-height: 100vh;
 }
 
+/* BARA DE SUS PENTRU MOBIL */
+.mobile-header {
+    display: none;
+    background: #0d1b2a;
+    border-bottom: 1px solid #1e2d42;
+    padding: 12px 16px;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.btn-menu-toggle {
+    background: #1e3a5f;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-menu-toggle:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.mobile-title {
+    color: #38bdf8;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 /* STRUCTURĂ PRINCIPALĂ */
 .container{
     display: flex;
@@ -31,6 +68,7 @@ aside{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    z-index: 900;
 }
 
 .menu-header {
@@ -114,6 +152,7 @@ main{
     border-radius: 20px;
     padding: 45px 35px;
     max-width: 800px;
+    width: 100%;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
@@ -137,6 +176,7 @@ main{
 
 .home-cover {
     width: 170px;
+    max-width: 80%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
@@ -258,7 +298,6 @@ main{
     border: 1px solid #1e2d42;
 }
 
-/* TITLUL TEMEI PE CENTRU (FĂRĂ LINIE SUB EA) */
 .lectie-card h1 {
     font-family: Georgia, serif;
     color: #38bdf8;
@@ -310,7 +349,6 @@ main{
     line-height: 1.4;
 }
 
-/* VARIANTE CU BIFĂ / X ÎN STÂNGA ÎN CERCULEȚ */
 .varianta {
     display: flex;
     align-items: center;
@@ -404,8 +442,12 @@ main{
     background: #1d4ed8;
 }
 
-/* RESPONSIVITATE */
+/* RESPONSIVITATE TELEFON & TABLETĂ */
 @media(max-width: 850px){
+    .mobile-header {
+        display: flex;
+    }
+
     .container {
         flex-direction: column;
     }
@@ -414,7 +456,17 @@ main{
         width: 100%;
         min-width: 100%;
         height: auto;
-        position: relative;
+        max-height: 70vh;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        display: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+        border-bottom: 2px solid #38bdf8;
+    }
+
+    aside.deschis {
+        display: flex;
     }
 
     .home-features {
