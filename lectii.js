@@ -26,7 +26,7 @@ Participarea României în Primul Război Mondial a avut un rol important în re
         raspunsCorect: 2
       },
       {
-        intrebare: "La ce dată a intrat România în Primul Război Mondial?",
+        intrebare: "Când a intrat România în Primul Război Mondial?",
         variante: ["23 august 1939","27 august 1916","27 martie 1918","1 decembrie 1918"],
         raspunsCorect: 1
       },
@@ -56,7 +56,7 @@ Participarea României în Primul Război Mondial a avut un rol important în re
 </p>
 
 <p>
-În anul <b>1917</b>, a fost creat <b>Sfatul Țării</b>, organul reprezentativ al Basarabiei. Acesta a proclamat autonomia Basarabiei și formarea Republicii Democratice Moldovenești. Sfatul Țării a avut un rol important în procesul de afirmare națională.
+La <b>21 noiembrie 1917</b>, a fost creat <b>Sfatul Țării</b>, organul reprezentativ al Basarabiei. Acesta a proclamat autonomia Basarabiei și formarea Republicii Democratice Moldovenești. Sfatul Țării a avut un rol important în procesul de afirmare națională.
 </p>
 
 <p>
@@ -175,7 +175,7 @@ Conferința de Pace de la Paris a contribuit la formarea unei noi ordini interna
       },
       {
         intrebare: "Care dintre următoarele personalități nu a participat la Conferința de Pace de la Paris (1919-1920)?",
-        variante: ["Georges Clemenceau","Woodrow Wilson","Vladimir Ilici Lenin","David Lloyd George"],
+        variante: ["Georges Clemenceau","Woodrow Wilson","Vladimir Lenin (Ulianov)","David Lloyd George"],
         raspunsCorect: 2
       },
       {
@@ -184,8 +184,8 @@ Conferința de Pace de la Paris a contribuit la formarea unei noi ordini interna
         raspunsCorect: 2
       },
       {
-        intrebare: "Statele învinse au participat la deciziile Conferinței de la Paris?",
-        variante: ["Nu, deciziile au fost luate exclusiv de statele învingătoare","Da, dar fără drept de vot, doar pentru a fi consultate","Nu, tratatele le-au fost doar impuse spre semnare","Da, cu dreptul de vot egal cu al învingătorilor"],
+        intrebare: "Cine a luat deciziile principale la Conferința de Pace de la Paris din 1919?",
+        variante: ["Toate statele participante, având drepturi egale de vot","Reprezentanții statelor învinse (Germania, Austro-Ungaria), prin negocieri directe","Doar Marile Puteri învingătoare (SUA, Marea Britanie, Franța, Italia, Japonia)","Organizația Națiunilor Unite"],
         raspunsCorect: 2
       },
       {
@@ -345,7 +345,7 @@ Ocuparea Basarabiei din <b>1940</b> a fost posibilă în urma Pactului Ribbentro
         raspunsCorect: 0
       },
       {
-        intrebare: "Ce limbă s-a folosit în școlile din Basarabia după 1918?",
+        intrebare: "Ce limbă se utiliza în școlile din Basarabia după 1918?",
         variante: ["Limba română","Limba franceză","Limba ucraineană","Limba rusă"],
         raspunsCorect: 0
       }
@@ -435,7 +435,7 @@ Prin activitatea acestor personalități, cultura românească a devenit cunoscu
         raspunsCorect: 0
       },
       {
-        intrebare: "Ce categorii de personalități s-au afirmat în această perioadă?",
+        intrebare: "Ce personalități s-au afirmat în această perioadă?",
         variante: ["Doar sportivi","Doar politicieni","Scriitori, istorici, oameni de știință și artiști","Doar militari"],
         raspunsCorect: 2
       },
@@ -585,7 +585,7 @@ Pierderile teritoriale din vara anului 1940 au reprezentat una dintre cele mai d
 `,
     intrebari: [
       {
-        intrebare: "Ce teritoriu a fost cedat Ungariei prin Dictatul de la Viena?",
+        intrebare: "Ce teritoriu a cedat România Ungariei prin Dictatul de la Viena?",
         variante: ["Basarabia","Sudul Dobrogei","Nord-vestul Transilvaniei","Bucovina"],
         raspunsCorect: 2
       },
@@ -681,7 +681,7 @@ Războiul a provocat distrugeri mari și peste 60 de milioane de oameni au murit
 `,
     intrebari: [
       {
-        intrebare: "Când a început Al Doilea Război Mondial?",
+        intrebare: "Când a început cel de-al Doilea Război Mondial?",
         variante: ["8 mai 1945","23 august 1939","22 iunie 1941","1 septembrie 1939"],
         raspunsCorect: 3
       },
@@ -781,7 +781,7 @@ După război, a fost creată <b>ONU</b> <b>(24 octombrie 1945)</b> pentru menț
 `,
     intrebari: [
       {
-        intrebare: "Aproximativ câte victime a provocat Al Doilea Război Mondial?",
+        intrebare: "Aproximativ câte victime a provocat cel de-al Doilea Război Mondial?",
         variante: ["Peste 10 milioane","Peste 100.000","Peste 60 de milioane","Peste 1 milion"],
         raspunsCorect: 2
       },
@@ -973,12 +973,12 @@ Foametea, represiunile și deportările au avut consecințe importante asupra po
 `,
     intrebari: [
       {
-        intrebare: "În ce ani a avut loc marea foamete din RSSM?",
+        intrebare: "Când a avut loc marea foamete din RSSM?",
         variante: ["1949–1951","1940–1941","1944–1945","1946–1947"],
         raspunsCorect: 3
       },
       {
-        intrebare: "Ce a provocat foametea din 1946-1947?",
+        intrebare: "De către ce a fost provocată foametea din 1946-1947?",
         variante: ["Seceta și politica economică a regimului sovietic","O epidemie","Un război civil","Un cutremur"],
         raspunsCorect: 0
       },

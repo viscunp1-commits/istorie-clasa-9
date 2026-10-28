@@ -273,7 +273,7 @@ function afiseazaWelcome() {
                 </div>
 
                 <div class="home-note">
-                    <p>💡 <b>Sfat:</b> Navighează prin meniul din stânga pentru a accesa lecțiile dorite și testează-ți cunoștințele pas cu pas spre succes.</p>
+                    <p>💡 <b>Sfat:</b> Navighează prin meniul din stânga ("Teme") pentru a accesa lecțiile dorite și testează-ți cunoștințele.</p>
                 </div>
 
                 <button class="btn-start" onclick="temaUrmatoare()">Începe cu prima temă</button>
