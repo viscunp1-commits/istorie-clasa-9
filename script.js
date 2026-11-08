@@ -37,7 +37,7 @@ const glosarExamen = {
         "Miracol economic": "perioadă de dezvoltare economică rapidă și spectaculoasă într-un timp relativ scurt.",
         "Nazism": "ideologie și politică totalitară, naționalistă și rasistă, aplicată de Hitler în Germania între 1933-1945.",
         "Organizația Națiunilor Unite": "cea mai importantă organizație internațională, fondată în 1945, cu misiunea de a asigura pacea mondială și respectarea drepturilor omului.",
-        "Pact": "înțelegere scrisă, tratat internațional încheiat, în special, pentru menținerea păcii sau colaborarea semnatarilor.",
+        "Pact": "înțelegere scrisă, tratat internațională încheiat, în special, pentru menținerea păcii sau colaborarea semnatarilor.",
         "Patrimoniu": "totalitatea bunurilor materiale și spirituale ce aparțin unui popor.",
         "Politică de conciliere": "politică de împăciuire a agresorului de către alte state, prin cedări teritoriale sau acceptarea condițiilor lui.",
         "Război rece": "confruntarea politică, diplomatică și ideologică dintre URSS și SUA, ce a dominat relațiile Est-Vest peste patru decenii.",
@@ -257,23 +257,23 @@ function afiseazaWelcome() {
                 <h1>Temele din manualul de istorie explicate pe scurt</h1>
                 <p>Un site pentru pregătirea de examenul de la Istoria Românilor și Universală</p>
                 
-                <div class="home-features">
-                    <div class="feature-box">
+                <div class="home-features-simple">
+                    <div class="feature-item-simplu">
                         <h4>Lecții pe scurt</h4>
                         <p>Cele mai importante idei din fiecare lecție, explicate simplu pentru a învăța mai ușor.</p>
                     </div>
-                    <div class="feature-box">
+                    <div class="feature-item-simplu">
                         <h4>Teste interactive</h4>
                         <p>Verifică-ți rapid cunoștințele după fiecare temă parcursă.</p>
                     </div>
-                    <div class="feature-box">
+                    <div class="feature-item-simplu">
                         <h4>Pentru examen</h4>
                         <p>Tot ce ai nevoie pentru a lua o notă mare la istorie.</p>
                     </div>
                 </div>
 
-                <div class="home-note">
-                    <p>💡 <b>Sfat:</b> Navighează prin meniul din stânga ("Teme") pentru a accesa lecțiile dorite și testează-ți cunoștințele.</p>
+                <div class="home-text-simplu">
+                    <p>💡 Navighează prin meniul din stânga ("Teme") pentru a accesa lecțiile dorite și testează-ți cunoștințele.</p>
                 </div>
 
                 <button class="btn-start" onclick="temaUrmatoare()">Începe cu prima temă</button>

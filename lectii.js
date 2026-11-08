@@ -21,7 +21,7 @@ Participarea României în Primul Război Mondial a avut un rol important în re
 `,
     intrebari: [
       {
-        intrebare: "În ce an și-a declarat România neutralitatea la izbucnirea Primului Război Mondial?",
+        intrebare: "În ce an și-a declarat România neutralitatea?",
         variante: ["1916","1918","1914","1917"],
         raspunsCorect: 2
       },
