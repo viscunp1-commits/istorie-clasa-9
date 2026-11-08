@@ -37,7 +37,7 @@ const glosarExamen = {
         "Miracol economic": "perioadă de dezvoltare economică rapidă și spectaculoasă într-un timp relativ scurt.",
         "Nazism": "ideologie și politică totalitară, naționalistă și rasistă, aplicată de Hitler în Germania între 1933-1945.",
         "Organizația Națiunilor Unite": "cea mai importantă organizație internațională, fondată în 1945, cu misiunea de a asigura pacea mondială și respectarea drepturilor omului.",
-        "Pact": "înțelegere scrisă, tratat internațională încheiat, în special, pentru menținerea păcii sau colaborarea semnatarilor.",
+        "Pact": "înțelegere scrisă, tratat internațional încheiat, în special, pentru menținerea păcii sau colaborarea semnatarilor.",
         "Patrimoniu": "totalitatea bunurilor materiale și spirituale ce aparțin unui popor.",
         "Politică de conciliere": "politică de împăciuire a agresorului de către alte state, prin cedări teritoriale sau acceptarea condițiilor lui.",
         "Război rece": "confruntarea politică, diplomatică și ideologică dintre URSS și SUA, ce a dominat relațiile Est-Vest peste patru decenii.",
