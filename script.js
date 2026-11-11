@@ -2,6 +2,7 @@ const listaTeme = document.getElementById("listaTeme");
 const continutLectie = document.getElementById("continutLectie");
 const asideMenu = document.getElementById("asideMenu");
 const btnMenuToggle = document.getElementById("btnMenuToggle");
+const modalLogo = document.getElementById("modalLogo");
 
 const cheiLectii = Object.keys(lectii);
 let lectieCurenta = -1; // -1 pentru pagina de bun venit (Home)
@@ -18,41 +19,57 @@ function inchideMeniuMobil() {
     }
 }
 
+// LOGICĂ PENTRU CLICK PE LOGO (PRIMUL CLICK MĂREȘTE, AL DOILEA DUCE ACASĂ)
+function gestioneazaClickLogo(event) {
+    event.stopPropagation();
+    if (modalLogo) {
+        modalLogo.classList.add("activ");
+    }
+}
+
+function inchideSauMergiAcasa(event) {
+    event.stopPropagation();
+    if (modalLogo) {
+        modalLogo.classList.remove("activ");
+    }
+    afiseazaWelcome();
+}
+
 const glosarExamen = {
     notiumni: {
-        "Autonomie": "dreptul unui stat, unei minorități sau naționalități de a se administra singură, fără intervenția puterii centrale.",
-        "Cenzură": "control exercitat de stat asupra conținutului publicațiilor, spectacolelor, radioteleviziunii și, uneori, corespondenței.",
-        "Colectivizare": "trecerea forțată a mijloacelor de producție în proprietate colectivă, prin naționalizare și confiscare, însoțită de violență și deportări.",
-        "Comunism": "ideologie ce promovează o societate fără stat, clase sociale și proprietate privată, cu scopul unei societăți egalitare.",
-        "Constituţie": "act legislativ ce definește drepturile cetățenilor și organizarea puterilor legislativă, executivă și judecătorească.",
-        "Cortina de fier": "denumire dată împărțirii Europei în Occidentul democratic și Estul controlat de URSS, în timpul Războiului Rece.",
-        "Criză economică": "eveniment social de declin economic, manifestat prin stagnare, recesiune și inflație.",
-        "Cultul personalității": "exaltarea rolului unei personalități politice în dezvoltarea societății, specifică regimurilor totalitare.",
-        "Cultura de masă": "formă de cultură a societății contemporane de consum, în care relațiile dintre oameni sunt guvernate de procese economice.",
-        "Democraţie": "regim politic bazat pe voința poporului, votul universal și suveranitatea națiunii.",
-        "Dictatură": "regim politic în care puterea nu poate fi controlată de societate, fiind impusă forțat de o persoană, un partid sau un grup.",
-        "Fascism": "ideologie totalitaristă opusă comunismului și democrației, apărută în Italia după Primul Război Mondial, bazată pe naționalism extremist și violență.",
-        "Ideologie": "totalitatea ideilor și concepțiilor ce constituie partea teoretică a unui sistem.",
-        "Liga Națiunilor": "organizație internațională înființată în iunie 1919, în urma Tratatului de la Versailles.",
-        "Miracol economic": "perioadă de dezvoltare economică rapidă și spectaculoasă într-un timp relativ scurt.",
-        "Nazism": "ideologie și politică totalitară, naționalistă și rasistă, aplicată de Hitler în Germania între 1933-1945.",
-        "Organizația Națiunilor Unite": "cea mai importantă organizație internațională, fondată în 1945, cu misiunea de a asigura pacea mondială și respectarea drepturilor omului.",
-        "Pact": "înțelegere scrisă, tratat internațional încheiat, în special, pentru menținerea păcii sau colaborarea semnatarilor.",
-        "Patrimoniu": "totalitatea bunurilor materiale și spirituale ce aparțin unui popor.",
-        "Politică de conciliere": "politică de împăciuire a agresorului de către alte state, prin cedări teritoriale sau acceptarea condițiilor lui.",
-        "Război rece": "confruntarea politică, diplomatică și ideologică dintre URSS și SUA, ce a dominat relațiile Est-Vest peste patru decenii.",
-        "Regim democratic": "regim ce se caracterizează prin separarea puterilor, legitimarea prin alegeri libere și respectarea drepturilor cetățenești.",
-        "Regim totalitar": "regim ce aplică dictatura unei minorități, prin controlul întregii activități a statului și politică de forță.",
-        "Regim autoritar": "regim politic în care drepturile omului nu sunt respectate, iar guvernanții /dictatorii nu pot fi înlăturați prin alegeri libere.",
-        "Represiuni": "reprimarea prin violență a opoziției, prin acțiuni drastice precum arestări, torturi, execuții și deportări.",
-        "Revizionism": "metodă critică de cercetare, aplicabilă în orice domeniu, prin care teoriile vechi sunt schimbate sau abandonate pe baza noilor dovezi.",
-        "Securitate colectivă": "măsuri de apărare comună împotriva unei agresiuni, stabilite în baza unui tratat.",
-        "Tratat": "acord în legea internațională, încheiat între două sau mai multe state ori entități internaționale.",
-        "Ultimatum": "înștiințare a unui stat către altul, prin care i se atrage atenția că, în cazul unor acte, se vor lua măsuri de constrângere sau se va porni război."
+        "Autonomie": "– reprezintă, din punct de vedere politic, dreptul unui stat, unei minorități sau unei naționalități de a se administra singură, în cadrul unui stat condus de o putere centrală, fără intervenția statului din care face parte.",
+        "Cenzură": "– control prealabil exercitat de către un organ al statului asupra conținutului publicațiilor, spectacolelor, emisiunilor de radioteleviziune și, uneori, asupra corespondenței și convorbirilor telefonice.",
+        "Colectivizare": "– acțiuni, întreprinse de puterea sovietică, de trecere a mijloacelor de producție în proprietate colectivă prin naționalizare, expropriere etc., procese deseori însoțite de violență, deportări, condamnări.",
+        "Comunism": "– este o ideologie care promovează un sistem social în care nu există stat, clase sociale și proprietate privată asupra mijloacelor de producție și care are scopul de a realiza o societate egalitară.",
+        "Constituție": "– este un act legislativ, care definește drepturile și libertățile cetățenilor, organizarea puterii legislative, executive și judecătorești; menține și exercită puterea de stat, și alte aspecte considerate esențiale pentru buna funcționare a statului.",
+        "Cortina de fier": "– este denumirea dată împărțirii Europei în două blocuri – Occidentul democratic și Estul aflat sub influența și controlul Uniunii Sovietice în perioada Războiului Rece.",
+        "Criză economică": "– este un eveniment social de manifestare a declinului economic care poate avea mai multe cauze, iar fazele acestei crize se manifestă printr-o perioadă de stagnare, de recesiune însoțită de inflație.",
+        "Cultul personalității": "– exaltarea rolului unei personalități politice în dezvoltarea societății, în cadrul unui regim totalitar.",
+        "Cultură de masă": "– o formă de cultură legată de societatea contemporană, adesea asociată cu societatea de consum, în care o mare parte din relațiile dintre oameni este bazată sau guvernată de procese economice și în care consumul și dorințele lor devin fenomene de societate.",
+        "Democrație": "– este un regim politic care se bazează pe voința poporului și principiile de bază ale democrației sunt votul universal și suveranitatea națiunii.",
+        "Dictatură": "– regim politic în care societatea nu dispune de mecanisme capabile să controleze puterea politică și, prin urmare, un popor este condus forțat de către o persoană, un partid sau un grup de oameni.",
+        "Fascism": "– ideologie totalitaristă opusă comunismului, liberalismului și democrației apărută în Italia după Primul Război Mondial, caracterizată prin naționalism extremist, misticism și violență.",
+        "Ideologie": "– totalitatea ideilor și concepțiilor care constituie partea teoretică a unui sistem.",
+        "Liga Națiunilor": "– a fost o organizație internațională înființată în iunie 1919 în urma Tratatului de la Versailles.",
+        "Miracol economic": "– perioadă de dezvoltare economică rapidă și spectaculoasă într-un timp relativ scurt.",
+        "Nazism": "– este o ideologie și o politică totalitară naționalistă, rasistă, care au fost aplicate în timpul dictaturii lui Hitler în statul german între 1933–1945.",
+        "Organizația Națiunilor Unite": "– este cea mai importantă organizație internațională din lume, fiind fondată pe 24 octombrie 1945, ONU are misiunea de a asigura pacea mondială, respectarea drepturilor omului, cooperarea internațională și respectarea dreptului internațional.",
+        "Pact": "– înțelegere scrisă, tratat internațional, bilateral sau multilateral, încheiat în special în scopul menținerii păcii sau al colaborării semnatarilor.",
+        "Patrimoniu": "– totalitatea bunurilor materiale și spirituale care aparțin unui popor.",
+        "Politică de conciliere": "– politică de împăciuire a agresorului de către alte state prin cedarea unor teritorii sau acceptarea condițiilor lui.",
+        "Război rece": "– confruntarea politică, diplomatică, ideologică, economică între cele două superputeri: URSS și SUA, ce a dominat vreme de peste patru decenii relațiile dintre Est și Vest.",
+        "Regim democratic": "– se caracterizează prin următoarele trăsături: existența separării puterilor în stat, puterea este legitimată prin intermediul alegerilor libere, respectarea drepturilor și libertăților cetățenești.",
+        "Regim totalitar": "– este un regim politic care aplică dictatura unei minorități, prin conducerea și controlul întregii activități în stat, practicând o politică de forță și violență.",
+        "Regim autoritar": "– este un regim politic în care nu se respectă drepturile omului, iar guvernanții nu pot fi înlăturați de la putere de către cetățeni prin alegeri libere.",
+        "Represiuni": "– represalii; reprimarea prin violență a unei acțiuni de opoziție, acțiuni drastice (arestări, torturi, execuții în masă, deportări) întreprinse în acest scop.",
+        "Revizionism": "– este o metodă critică de cercetare, aplicabilă în orice domeniu al cunoașterii, iar atunci când cercetările găsesc noi dovezi, sau când specialiștii descoperă erori în vechile teorii, acestea sunt schimbate, fie abandonate.",
+        "Securitate colectivă": "– măsuri de apărare comună împotriva unei agresiuni, stabilite în baza unui tratat.",
+        "Tratat": "– este un acord în legea internațională încheiat între două (state) sau mai multe entități internaționale, două state și organizării internaționale.",
+        "Ultimatum": "– înștiințare făcută de un stat altui stat, prin notă diplomatică, în care i se atrage atenția că, în cazul în care ar săvârși anumite acte, se vor lua măsuri de constrângere sau se va porni război împotriva lui."
     },
     personalitati: {
-        "Ferdinand I (10 octombrie 1914-20 iulie 1927)": "a acceptat, în Consiliul de Coroană din august 1916, intrarea României în Primul Război Mondial de partea Antantei, făcând primul pas spre România Mare. A refuzat să ratifice pacea separată dintre Puterile Centrale și România. A fost regele României întregite, încoronat la 15 octombrie 1922 la Alba Iulia, a sprijinit reformele înfăptuite în țară, fiind un veritabil monarh constituțional.",
-        "Carol al II-lea": "- rege al României (8 iunie 1930-6 septembrie 1940). Obiectivul său central a fost creșterea rolului monarhiei în stat; în 1938 a instaurat regimul de dictatură personală. În septembrie 1940, după cedarea Basarabiei, nordului Bucovinei și ținutului Herța (URSS), a Transilvaniei de Nord-Vest (Ungariei) și a Cadrilaterului (Bulgariei), a abdicat în favoarea fiului său Mihai, iar puterile dictatoriale au trecut la generalul Ion Antonescu.",
+        "Ferdinand I (10 octombrie 1914-20 iulie 1927)": "- a acceptat, în Consiliul de Coroană din august 1916, intrarea României în Primul Război Mondial de partea Antantei, făcând primul pas spre România Mare. A refuzat să ratifice pacea separată dintre Puterile Centrale și România. A fost regele României întregite, încoronat la 15 octombrie 1922 la Alba Iulia, a sprijinit reformele înfăptuite în țară, fiind un veritabil monarh constituțional.",
+        "Carol al II-lea": "- rege al României (8 iunie 1930-6 septembrie 1940). Obiectivul său central a fost creșterea rolului monarhiei în stat; în 1938 a instaurat regimul de dictatură personală. În septembrie 1940, după cedarea Basarabiei, nordului Bucovinei și ținutului Herța (URSS), a Transilvaniei de Nord-Vest (Ungariei) și a Cadrilaterului (Bulgariei), a abdicat în favoarea fiului său Mihai, iar atribuțiile statului au trecut sub conducerea generalului Ion Antonescu.",
         "Alexei Mateevici (27 martie 1888-24 august 1917)": "- poet, preot și scriitor basarabean. În 1907 a publicat primele versuri în ziarele „Basarabia” și „Țăranii”, precum și poezia „Eu cânt”, alături de articole despre cântecele populare și obiceiurile din Basarabia. Cunoscut pentru contribuția sa la promovarea identității naționale românești. Este autorul poeziei „Limba noastră”, luptând pentru păstrarea limbii române în contextul politicii de rusificare a Imperiului Rus.",
         "Ion Inculeţ (1884-1940)": "- om politic, fizician, membru titular al Academiei Române. Primul președinte al Sfatului Țării (21 noiembrie 1917-2 aprilie 1918), militant al eliberării naționale și unirii cu România. După unire, a deținut funcții importante: ministru al Basarabiei, ministru al sănătății publice, ministru de interne, ministru al comunicațiilor și vicepreședinte al Consiliului de Miniștri al României.",
         "Nicolae Titulescu (1882-1941)": "- diplomat, jurist și om politic român, una dintre cele mai importante personalități ale diplomației europene din perioada interbelică. A fost ministru de externe al României și de două ori președinte al Societății Națiunilor, unde a susținut pacea, securitatea colectivă și cooperarea între state. A promovat activ politica de alianțe, contribuind la consolidarea poziției internaționale a României. A murit în 1941, în exil, Franța.",
@@ -188,7 +205,7 @@ function deschideLectia(id){
 function afiseazaGlosar() {
     let htmlNotiuni = "";
     for (let [k, v] of Object.entries(glosarExamen.notiumni)) {
-        htmlNotiuni += `<p style="margin-bottom: 15px; line-height: 1.6; color: #cbd5e1; text-align: left;"><b>${k}</b> - ${v}</p>`;
+        htmlNotiuni += `<p style="margin-bottom: 15px; line-height: 1.6; color: #cbd5e1; text-align: left;"><b>${k}</b> ${v}</p>`;
     }
 
     let htmlPersonalitati = "";

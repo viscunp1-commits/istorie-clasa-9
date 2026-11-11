@@ -10,17 +10,29 @@
 
 <body>
 
+<!-- MODAL PENTRU MĂRIREA LOGO-ULUI ÎN MIJLOCUL ECRANULUI -->
+<div id="modalLogo" class="modal-logo" onclick="inchideSauMergiAcasa(event)">
+    <img id="imgModal" src="logo.jpg" alt="Logo Mare">
+    <div class="modal-hint">Apasă din nou pe logo pentru a reveni la pagina principală</div>
+</div>
+
 <div class="mobile-header">
     <button id="btnMenuToggle" class="btn-menu-toggle" aria-label="Deschide meniul">
         ☰ Teme
     </button>
-    <div class="mobile-title" onclick="afiseazaWelcome()">Istorie clasa a IX-a</div>
+    <div class="mobile-title" onclick="gestioneazaClickLogo(event)">
+        <img src="logo.jpg" alt="Logo" class="logo-img">
+        Istorie clasa a IX-a
+    </div>
 </div>
 
 <div class="container">
 
     <aside id="asideMenu">
-        <div class="menu-header" onclick="afiseazaWelcome()">Istorie clasa a IX-a</div>
+        <div class="menu-header" onclick="gestioneazaClickLogo(event)">
+            <img src="logo.jpg" alt="Logo History Scope" class="logo-img">
+            <span>Istorie clasa a IX-a</span>
+        </div>
         <div id="listaTeme"></div>
     </aside>
 
