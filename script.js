@@ -217,7 +217,7 @@ function afiseazaGlosar() {
         <div class="lectie-container">
             <div class="lectie-card">
                 <h1 style="text-align: center;">Noțiuni și Personalități pentru Examen</h1>
-                <p style="text-align: center; color: #38bdf8; margin-bottom: 30px;">Ghid esențial extras din programa de examen pentru clasa a IX-a.</p>
+                <p style="text-align: center; color: #38bdf8; margin-bottom: 30px;">Ghid esențial extras din programa de examen pentru clasa a IX-a</p>
                 
                 <h2 style="color: #38bdf8; font-family: Georgia, serif; margin-top: 30px; margin-bottom: 20px; border-bottom: 1px solid #1e2d42; padding-bottom: 8px; text-align: center;">NOȚIUNI</h2>
                 ${htmlNotiuni}
